@@ -52,6 +52,5 @@ services:
     #      - ${PWD}/ssh/:/home/ibgateway/.ssh
     #      - ${PWD}/scripts:/home/ibgateway/init-scripts
     ports:
-      - "127.0.0.1:4001:4003"
-      - "127.0.0.1:4002:4004"
-      - "127.0.0.1:5900:5900"
+      - "${TWS_BIND_IP:-127.0.0.1}:${TWS_API_PORT_EXT:-4002}:${TWS_API_PORT_INT:-4004}"
+      - "${TWS_BIND_IP:-127.0.0.1}:5900:5900"
